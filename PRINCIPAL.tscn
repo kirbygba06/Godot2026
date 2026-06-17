@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://bvpif1ij5mnfk"]
+[gd_scene format=3 uid="uid://b1xh2rwimkj57"]
 
-[ext_resource type="Script" uid="uid://bjjr2gve3fvlp" path="res://mainchar.gd" id="1_gfc2b"]
-[ext_resource type="Script" uid="uid://lmap303wtfxk" path="res://Cena1.gd" id="1_mo5yb"]
+[ext_resource type="Script" path="res://mainchar.gd" id="1_gfc2b"]
+[ext_resource type="Script" path="res://Cena1.gd" id="1_mo5yb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fh1oi"]
 radius = 11.0
@@ -10,7 +10,9 @@ height = 22.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gfc2b"]
 size = Vector2(1192, 51)
 
-[node name="Node2D" type="Node2D" unique_id=1815349080 groups=["bullet", "enemy", "player", "wallnfloor"]]
+[sub_resource type="SystemFont" id="SystemFont_gfc2b"]
+
+[node name="Node2D" type="Node2D" unique_id=1815349080]
 script = ExtResource("1_mo5yb")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1592320167]
@@ -40,6 +42,21 @@ offset_bottom = 98.0
 position = Vector2(-31, 84)
 shape = SubResource("RectangleShape2D_gfc2b")
 
-[node name="Label" type="Label" parent="." unique_id=110660721]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=862647291]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=667567368]
+offset_left = -563.0
+offset_top = -299.0
+offset_right = -414.0
+offset_bottom = -272.0
+value = 100.0
+fill_mode = 1
+show_percentage = false
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=296407428]
+offset_left = -561.0
+offset_top = -298.0
+offset_right = -521.0
+offset_bottom = -275.0
+theme_override_fonts/font = SubResource("SystemFont_gfc2b")
+text = "100"

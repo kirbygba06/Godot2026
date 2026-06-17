@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://ctkdaxg7vlqbf"]
+[gd_scene format=3 uid="uid://c5bmbwdpc4e64"]
 
-[ext_resource type="Script" uid="uid://im3nvdkmoy4m" path="res://ENEMY1.gd" id="1_qimvh"]
+[ext_resource type="Script" path="res://ENEMY1.gd" id="1_qimvh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fcomc"]
 radius = 13.0

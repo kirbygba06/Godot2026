@@ -56,7 +56,7 @@ func shoot():
 
 func take_damage(amount: int) -> void:
 	hp -= amount
-	vida_mudou.emit(hp)  # 🔥 AVISA A HUD QUE A VIDA MUDOU!
+	vida_mudou.emit(hp)  # AVISA A HUD QUE A VIDA MUDOU!
 	
 	if hp <= 0:
 		hp = 0
