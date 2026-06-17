@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ctkdaxg7vlqbf"]
+
+[ext_resource type="Script" uid="uid://im3nvdkmoy4m" path="res://ENEMY1.gd" id="1_qimvh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fcomc"]
+radius = 13.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qimvh"]
+radius = 229.05458
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=499451989]
+script = ExtResource("1_qimvh")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=913996727]
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(1, 0.494251, 0.42709014, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1361542928]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_fcomc")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=798965151]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1111035387]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_qimvh")

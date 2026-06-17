@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bvpif1ij5mnfk"]
+
+[ext_resource type="Script" uid="uid://bjjr2gve3fvlp" path="res://mainchar.gd" id="1_gfc2b"]
+[ext_resource type="Script" uid="uid://lmap303wtfxk" path="res://Cena1.gd" id="1_mo5yb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fh1oi"]
+radius = 11.0
+height = 22.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfc2b"]
+size = Vector2(1192, 51)
+
+[node name="Node2D" type="Node2D" unique_id=1815349080]
+script = ExtResource("1_mo5yb")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1592320167]
+position = Vector2(-8, 8)
+script = ExtResource("1_gfc2b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=47701016]
+position = Vector2(8, -8)
+shape = SubResource("CapsuleShape2D_fh1oi")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=270762966]
+
+[node name="ColorRect" type="ColorRect" parent="Player" unique_id=1403418446]
+offset_top = -16.0
+offset_right = 16.0
+color = Color(0.26, 1, 0.3833332, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=943536239]
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=264526122]
+offset_left = -584.0
+offset_top = 58.0
+offset_right = 564.0
+offset_bottom = 98.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1614711724]
+position = Vector2(-31, 84)
+shape = SubResource("RectangleShape2D_gfc2b")
+
+[node name="Label" type="Label" parent="." unique_id=110660721]
+offset_right = 40.0
+offset_bottom = 23.0
