@@ -14,9 +14,12 @@ var player_ref: Node = null
 var damage_timer = DAMAGE_INTERVAL
 
 func _ready() -> void:
-	$Area2D.body_entered.connect(_on_body_entered)
-	$Area2D.body_exited.connect(_on_body_exited)
-	$Area2D.area_entered.connect(_on_area_entered)
+	# 🔥 Usa a $Vision (grande) para detectar o player
+	$Vision.body_entered.connect(_on_body_entered)
+	$Vision.body_exited.connect(_on_body_exited)
+	
+	# 🔥 Usa a $Hitbox (pequena) para receber dano de balas
+	$Hitbox.area_entered.connect(_on_hitbox_entered)
 
 func _physics_process(delta: float) -> void:
 	# Gravidade
@@ -33,7 +36,7 @@ func _physics_process(delta: float) -> void:
 			speed = CHASE_SPEED
 			direction = sign(player_ref.global_position.x - global_position.x)
 			
-			# Dano por contato
+			# Dano por contato (usa a distância real, não a Area2D)
 			if distance < DAMAGE_RANGE:
 				damage_timer -= delta
 				if damage_timer <= 0:
@@ -52,9 +55,10 @@ func _on_body_exited(body: Node) -> void:
 	if body == player_ref:
 		player_ref = null
 
-func _on_area_entered(area: Area2D) -> void:
+# 🔥 NOVA FUNÇÃO: Só é chamada quando a bala toca na Hitbox (corpo)
+func _on_hitbox_entered(area: Area2D) -> void:
 	if area.is_in_group("bullet"):
 		hp -= 1
-		area.queue_free()
+		area.queue_free() # Apaga a bala
 		if hp <= 0:
-			queue_free()
+			queue_free() # Apaga o inimigo
