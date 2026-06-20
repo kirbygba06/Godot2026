@@ -1,3 +1,49 @@
-# Godot 4+ specific ignores
-.godot/
-/android/
+```
+# Godot-specific ignores
+*.import
+*.uid
+.project
+.scn
+.gdignore
+# Build artifacts
+*.so
+*.dll
+*.exe
+*.o
+*.obj
+*.a
+*.lib
+*.dylib
+*.jar
+*.war
+*.class
+# Dependencies
+node_modules/
+venv/
+.venv/
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+.coverage
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+# Logs
+*.log
+# Temp files
+*.tmp
+# Environment
+.env
+.env.local
+*.env.*
+# Coverage
+coverage/
+htmlcov/
+# Distribution
+dist/
+build/
+target/
+.gradle/
+```
