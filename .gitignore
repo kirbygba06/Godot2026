@@ -1,3 +1,1 @@
-# Godot 4+ specific ignores
-.godot/
-/android/
+Nothing should be ignored based on the provided file changes. The only added file is README.md, which is a source/config file and should not be ignored.
